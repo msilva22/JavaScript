@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Multiplicar</title>
+</head>
+<body>
+	
+	<h1>Multiplicar</h1>
+	<div id="custo">Resultados</div>
+		
+	
+	<label for="v1">Digite o 1° Valor</label><input type="text" name="v1" id="v1"><br>
+	<label for="v2">Digite o 2° Valor</label><input type="text" name="v2" id="v2">
+	<input type="button" name="botao" id="botao" value="Multiplicar">
+	<input type="button" name="reiniciar" id="reiniciar" value="Reiniciar">
+
+	<script type="text/javascript">
+
+		function multiplicar(){
+			var v1 = document.getElementById('v1').value; 
+			var v2 = document.getElementById('v2').value;
+			var res = parseFloat(v1) * parseFloat(v2);
+			var custo = document.getElementById('custo');
+			custo.style.backgroundColor = 'blue'; 
+			custo.innerHTML = '<h1>' + res + '</h1>';
+		}
+
+		var botao = document.getElementById('botao');
+		botao.addEventListener('click',multiplicar,false);
+
+		function reiniciar(){
+			var v1 = document.getElementById('v1').value = ''; 
+			var v2 = document.getElementById('v2').value = '';
+			var custo = document.getElementById('custo').innerHTML = '';
+			
+		}
+
+		var bReiniciar = document.getElementById('reiniciar');
+		bReiniciar.addEventListener('click',reiniciar,false);
+	</script>
+	
+</body>
+</html>
